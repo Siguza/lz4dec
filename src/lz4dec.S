@@ -86,8 +86,10 @@ Lmatchlength:
     ldrb w5, [x0], 1
     ldrb w6, [x0], 1
     bfi w5, w6, 8, 8
+#ifndef UNSAFE_LZ4
     // Zero offset is invalid
     cbz w5, Lerr
+#endif
     // Extract matchlength
     bl Llongsz
     adds x4, x4, 4
@@ -129,8 +131,10 @@ Lmoresz:
 Ldonesz:
     ret
 
+#ifndef UNSAFE_LZ4
 Lerr:
     mov x1, x14
+#endif
 Lend:
     sub x0, x1, x14
     ret x15

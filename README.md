@@ -12,7 +12,7 @@ It has two configuration:
 - "Unsafe"  
   This configuration can be enabled by defining the `UNSAFE_LZ4` macro and will eliminate all bounds checks. This must only be used with trusted input, e.g. when combined with a "known-good" compressed firmware image.
 
-At the time of writing, the code size of the safe configuration is 252 bytes while that of the unsafe configuration is 152 bytes.
+At the time of writing, the code size of the safe configuration is 252 bytes while that of the unsafe configuration is 144 bytes.
 
 ### Usage
 
